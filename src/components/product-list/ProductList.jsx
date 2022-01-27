@@ -5,7 +5,9 @@ import "./productList.scss";
 
 const ProductList = () => {
   return (
-    <div>
+    <div className="product-list">
+      <Product />
+      <Product />
       <Product />
       <Product />
       <Product />

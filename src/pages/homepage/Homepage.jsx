@@ -69,7 +69,7 @@ const Homepage = () => {
             </Button>
           </div>
           <div className="right">
-            <img src={hcmStore1} alt="store picture" className="store-img" />
+            <img src={hcmStore1} alt="store" className="store-img" />
           </div>
         </div>
         <div className="blogs">

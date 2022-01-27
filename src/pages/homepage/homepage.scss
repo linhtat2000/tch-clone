@@ -26,6 +26,12 @@
     text-transform: none;
   }
 
+  .collections {
+    padding: 6em 0 16em;
+    margin: 0 auto;
+    width: 1200px;
+  }
+
   .new-products {
     background-color: $secondary-clr;
     display: flex;

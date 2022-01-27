@@ -1,0 +1,36 @@
+@import "../../global.scss";
+
+.product {
+  margin: 3em auto;
+
+  .img {
+    width: 250px;
+    border-radius: 12px;
+    box-shadow: 5px 5px 10px #bbb;
+  }
+
+  .info {
+    margin-left: 1em;
+
+    .name {
+      font-size: 1.7rem;
+      font-weight: 500;
+      margin-top: 0.6em;
+    }
+
+    .price {
+      font-size: 1.6rem;
+      margin-top: 0.2em;
+
+      &.sale {
+        color: $primary-clr;
+      }
+    }
+
+    .actual-price {
+      font-size: 1.6rem;
+      color: #666;
+      text-decoration: line-through;
+    }
+  }
+}
