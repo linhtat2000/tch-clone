@@ -5,23 +5,29 @@
   justify-content: space-around;
   padding: 2em 0 6em;
 
-  .header,
-  .delivery,
-  .contact {
-    font-weight: 500;
-    font-size: 1rem;
-    margin: 1em 0;
-  }
-  .contact {
-    width: 50%;
-
-    small {
-      font-weight: 400;
+  .links {
+    .header,
+    .delivery,
+    .contact {
+      font-weight: 500;
+      font-size: 1.6rem;
+      margin: 1em 0;
     }
-  }
+    .contact {
+      width: 50%;
 
-  .link {
-    font-size: 0.8rem;
-    margin-top: 0.8em;
+      small {
+        font-weight: 400;
+      }
+    }
+
+    .icon {
+      margin-right: 0.5em;
+    }
+
+    .link {
+      font-size: 1.3rem;
+      margin-top: 0.8em;
+    }
   }
 }

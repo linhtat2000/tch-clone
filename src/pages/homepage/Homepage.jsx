@@ -1,56 +1,82 @@
 import React from "react";
 
+import { Button, ThemeProvider } from "@mui/material";
+import BlogItem from "../../components/blog-item/BlogItem";
+import ProductList from "../../components/product-list/ProductList";
+
+import tradao from "../../assets/img/tra-dao.png";
+import tranhan from "../../assets/img/tra-nhan.png";
 import banner from "../../assets/img/banner.png";
+import theme from "../../theme";
+
 import "./homepage.scss";
 
 const Homepage = () => {
   return (
-    <div className="homepage">
-      <img src={banner} alt="Tet Holiday banner" className="banner" />
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum odit
-      adipisci at accusantium hic eius, aliquam corporis similique autem facere
-      aperiam, porro a voluptatem explicabo excepturi reprehenderit ea?
-      Assumenda numquam unde facere iure nihil ab, quaerat sapiente eius ratione
-      ipsa mollitia voluptatum nostrum libero ipsum! Vel ullam voluptates ab
-      labore, iste harum laborum voluptatibus, quibusdam accusantium pariatur
-      cum repellat, fuga quia ipsam et repellendus facere voluptatum quidem nam
-      ex maiores? Quibusdam accusantium iure eum at ex odio dolorem, consequatur
-      quas eveniet iste doloribus, et assumenda aliquid beatae a nam in suscipit
-      repudiandae nesciunt non ab dolore quo. Amet minus autem illo aspernatur
-      voluptas veniam, repellendus neque hic fugiat tenetur, dolorum, sit
-      consequuntur! Voluptatibus quis quam maxime a sunt maiores laboriosam
-      totam, atque eius cumque modi sed doloremque autem tenetur corporis
-      aliquam earum reiciendis placeat, natus recusandae asperiores! Veritatis
-      ipsam reiciendis laborum nesciunt ipsum. Eos reprehenderit, architecto
-      natus neque quas reiciendis est nihil dolore ad molestias, voluptates,
-      repellat rerum repellendus error. Accusamus sapiente atque eius quisquam
-      dicta magni mollitia magnam suscipit illo. Animi minima voluptate quidem
-      omnis alias accusamus velit veniam nihil voluptatibus dolorem! Quis
-      officia quidem dolores aperiam hic aliquam consequatur omnis, eos soluta
-      consequuntur ullam et porro! Rerum, voluptatum sapiente. Reprehenderit ea
-      architecto temporibus ullam, mollitia quis inventore eligendi veritatis
-      voluptates hic debitis nisi nam, consectetur repudiandae pariatur tempore
-      voluptatem cum minus tenetur! Amet ullam animi omnis officiis maiores ea!
-      Modi, reiciendis doloribus? Voluptatum dolore natus illum saepe expedita
-      minima quo temporibus quae! Beatae ullam nulla nihil distinctio quaerat
-      consequuntur quam vero accusantium fugit libero mollitia consequatur, nisi
-      dicta ab magnam natus repellendus neque, dolores rem iure, incidunt
-      repellat. Non, sapiente cum corrupti ducimus placeat eius voluptatibus
-      temporibus tempora qui error rem id veniam fugiat magnam ab alias facilis
-      itaque cumque deserunt nulla, vitae dolorem! Iste error voluptatibus
-      commodi voluptate culpa officiis aliquam natus quis optio nam, nihil
-      repudiandae consequatur totam in hic ratione dicta delectus! Sequi,
-      doloremque quos architecto explicabo sunt molestias? Nesciunt
-      exercitationem quaerat tempora in, qui dolorem quae doloribus omnis est
-      aut nulla sequi suscipit similique nam quam cum et soluta accusantium
-      pariatur quidem ut? Aliquid quas, facilis perspiciatis fugit molestias
-      exercitationem, in aspernatur quae, sequi ratione cupiditate! Quas vero
-      provident reprehenderit itaque iusto adipisci sunt. Rerum placeat
-      excepturi illo. Sapiente quam sit iusto error aperiam cupiditate doloribus
-      impedit deserunt sint? Ad, voluptatum nemo sunt aut soluta ipsum
-      consectetur obcaecati exercitationem inventore sit fugiat harum unde
-      maxime, suscipit quis.
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className="homepage">
+        <img src={banner} alt="Tet Holiday banner" className="banner" />
+        <div className="collections">
+          <ProductList />
+        </div>
+        <div className="new-products">
+          <div className="item">
+            <div className="left">
+              <h2 className="header">Trà Sen Nhãn Sum Vầy</h2>
+              <p className="description">
+                Thức uống mang hương vị của nhãn, của sen, của trà Oolong đầy
+                thanh mát cho tất cả các thành viên trong dịp Tết này. An lành,
+                thư thái và đậm đà chính là những gì The Coffee House mong muốn
+                gửi trao đến bạn và gia đình.
+              </p>
+              <Button variant="contained" className="btn">
+                Tìm hiểu thêm
+              </Button>
+            </div>
+            <div className="right">
+              <img src={tranhan} alt="Longan tea" className="product-img" />
+            </div>
+          </div>
+          <div className="item">
+            <div className="right close-to-left">
+              <h2 className="header">Trà Dưa Đào Sung Túc</h2>
+              <p className="description">
+                Vị thơm ngọt của Dưa lưới và đào tươi chua chua, ngọt ngọt trên
+                nền trà Oolong trứ danh cùng lớp foam cheese mỏng nhẹ vị mặn mặn
+                tạo nên sự cân bằng cho thức uống, sẽ đem đến cho bạn, gia đình
+                và bạn bè những giai điệu tươi vui cho mùa xuân mới.
+              </p>
+              <Button variant="contained" className="btn">
+                Tìm hiểu thêm
+              </Button>
+            </div>
+            <div className="left">
+              <img src={tradao} alt="Peach tea" className="product-img" />
+            </div>
+          </div>
+        </div>
+        <div className="store">
+          <div className="left">
+            <h2 className="header">The Coffee House 64A Lữ Gia - Quận 11</h2>
+            <p className="description">
+              Cửa hàng mới vừa ra mắt ngày 17/12 tại Quận 11, Hồ Chí Minh đã sẵn
+              sàng đón bạn ghé qua rồi nè!
+            </p>
+            <Button variant="contained" className="btn">
+              Tìm hiểu thêm
+            </Button>
+          </div>
+          <div className="right">pics</div>
+        </div>
+        <div className="blogs">
+          <h2 className="header">Chuyện Cà phê và Trà</h2>
+          <div className="topic">
+            <h3 className="topic-header">Coffeeholic</h3>
+            <BlogItem />
+          </div>
+        </div>
+      </div>
+    </ThemeProvider>
   );
 };
 

@@ -1,5 +1,8 @@
 import React from "react";
 
+import PhoneIcon from "@mui/icons-material/Phone";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+
 import "./footer.scss";
 
 const Footer = () => {
@@ -20,9 +23,15 @@ const Footer = () => {
         <div className="link">Quy tắc bảo mật</div>
       </div>
       <div className="links">
-        <div className="delivery">Đặt hàng: 1800 6936</div>
+        <div className="delivery">
+          <PhoneIcon className="icon" />
+          Đặt hàng: 1800 6936
+        </div>
         <div className="contact">
-          <h2 className="header">Liên hệ</h2>
+          <h2 className="header">
+            <LocationOnIcon className="icon" />
+            Liên hệ
+          </h2>
           <small>
             Tầng 3-4 Hub Building 195/10E Điện Biên Phủ, P.15 , Q.Bình Thạnh,
             TP.Hồ Chí Minh
