@@ -76,7 +76,27 @@ const Homepage = () => {
           <h2 className="header">Chuyện Cà phê và Trà</h2>
           <div className="topic">
             <h3 className="topic-header">Coffeeholic</h3>
-            <BlogItem />
+            <div className="topic-list">
+              <BlogItem />
+              <BlogItem />
+              <BlogItem />
+            </div>
+          </div>
+          <div className="topic">
+            <h3 className="topic-header">Coffeeholic</h3>
+            <div className="topic-list">
+              <BlogItem />
+              <BlogItem />
+              <BlogItem />
+            </div>
+          </div>
+          <div className="topic">
+            <h3 className="topic-header">Coffeeholic</h3>
+            <div className="topic-list">
+              <BlogItem />
+              <BlogItem />
+              <BlogItem />
+            </div>
           </div>
         </div>
       </div>
