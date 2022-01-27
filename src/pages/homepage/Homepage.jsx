@@ -4,6 +4,8 @@ import { Button, ThemeProvider } from "@mui/material";
 import BlogItem from "../../components/blog-item/BlogItem";
 import ProductList from "../../components/product-list/ProductList";
 
+import hcmStore1 from "../../assets/img/hcm-store-1.jpg";
+import hcmStore2 from "../../assets/img/hcm-store-2.jpg";
 import tradao from "../../assets/img/tra-dao.png";
 import tranhan from "../../assets/img/tra-nhan.png";
 import banner from "../../assets/img/banner.png";
@@ -66,7 +68,9 @@ const Homepage = () => {
               Tìm hiểu thêm
             </Button>
           </div>
-          <div className="right">pics</div>
+          <div className="right">
+            <img src={hcmStore1} alt="store picture" className="store-img" />
+          </div>
         </div>
         <div className="blogs">
           <h2 className="header">Chuyện Cà phê và Trà</h2>
