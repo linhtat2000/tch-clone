@@ -1,0 +1,27 @@
+.footer {
+  background-color: #262626;
+  color: #eee;
+  display: flex;
+  justify-content: space-around;
+  padding: 2em 0 6em;
+
+  .header,
+  .delivery,
+  .contact {
+    font-weight: 500;
+    font-size: 1rem;
+    margin: 1em 0;
+  }
+  .contact {
+    width: 50%;
+
+    small {
+      font-weight: 400;
+    }
+  }
+
+  .link {
+    font-size: 0.8rem;
+    margin-top: 0.8em;
+  }
+}
