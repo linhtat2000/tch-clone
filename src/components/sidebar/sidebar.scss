@@ -1,0 +1,26 @@
+@import "../../global.scss";
+
+.sidebar {
+  list-style: none;
+  font-size: 1.6rem;
+
+  color: #777;
+
+  .category {
+    margin-bottom: 0.6em;
+    cursor: pointer;
+
+    &.active,
+    .sub-category:hover {
+      font-size: 1.7rem;
+      color: $primary-clr;
+      font-weight: 500;
+
+      .coffee-icon {
+        font-size: 1.6rem;
+        margin-left: -1.6em;
+        margin-right: 0.6em;
+      }
+    }
+  }
+}

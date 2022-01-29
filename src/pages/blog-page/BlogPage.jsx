@@ -3,7 +3,7 @@ import React from "react";
 import "./blogPage.scss";
 
 const BlogPage = () => {
-  return <div>This is Blog</div>;
+  return <div className="blog-page">This is Blog</div>;
 };
 
 export default BlogPage;
