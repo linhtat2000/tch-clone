@@ -1,20 +1,41 @@
 @import "../../global.scss";
 
 .sidebar {
-  list-style: none;
   font-size: 1.6rem;
-
   color: #777;
+  position: sticky;
+  top: 7.5em;
 
   .category {
+    list-style: none;
     margin-bottom: 0.6em;
     cursor: pointer;
 
-    &.active,
-    .sub-category:hover {
-      font-size: 1.7rem;
-      color: $primary-clr;
-      font-weight: 500;
+    .sub-category {
+      display: none;
+    }
+
+    &.active {
+      p {
+        color: $primary-clr;
+        font-weight: 500;
+      }
+
+      .sub-category {
+        display: flex;
+        align-items: center;
+        margin: 0.8em 0;
+
+        &::before {
+          content: "";
+          width: 4px;
+          height: 4px;
+          border-radius: 50%;
+          background-color: #666;
+          display: block;
+          margin-right: 0.6em;
+        }
+      }
 
       .coffee-icon {
         font-size: 1.6rem;

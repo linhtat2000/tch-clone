@@ -1,7 +1,9 @@
+@import "../../global.scss";
+
 .navbar {
-  height: 40px;
+  height: 25px;
   position: fixed;
-  top: 0;
+  top: $topbar-info-height;
   left: 0;
   right: 0;
   z-index: 1;
@@ -12,8 +14,9 @@
   justify-content: space-around;
 
   .logo {
+    width: 220px;
     position: relative;
-    top: -97px;
+    top: -64px;
   }
 
   .links {
