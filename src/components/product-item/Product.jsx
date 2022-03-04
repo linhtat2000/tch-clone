@@ -1,16 +1,17 @@
-import React from "react";
-
-import mochaNong from "../../assets/img/mocha-nong.jpg";
 import "./product.scss";
 
-const Product = () => {
+const Product = ({ name, price, salePrice, img }) => {
   return (
     <div className="product">
-      <img src={mochaNong} alt="product" className="img" />
+      <img
+        src={require("../../assets/product-img/bac-xiu-da.jpg")}
+        alt={`${name}'s thumbnail`}
+        className="img"
+      />
       <div className="info">
-        <p className="name">Mocha Nong</p>
-        <p className="price sale">35.400 đ</p>
-        <p className="actual-price">59.000 đ</p>
+        <p className="name">{name}</p>
+        <p className="price sale">{salePrice}.000đ</p>
+        <p className="actual-price">{price}.000đ</p>
       </div>
     </div>
   );

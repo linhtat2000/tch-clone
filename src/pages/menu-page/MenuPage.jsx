@@ -1,14 +1,13 @@
+import ProductList from "../../components/product-list/ProductList";
 import Sidebar from "../../components/sidebar/Sidebar";
 import banner from "../../assets/img/menu-banner.jpg";
+import { all } from "../../products-data";
 
 import "./menuPage.scss";
-import ProductList from "../../components/product-list/ProductList";
-import Navbar from "../../components/navbar/Navbar";
 
 const MenuPage = () => {
   return (
     <>
-      {/* <Navbar /> */}
       <div className="menu-page">
         <div className="left">
           <Sidebar />
@@ -17,7 +16,7 @@ const MenuPage = () => {
           <img src={banner} alt="Promo product banner" className="banner" />
           <h2 className="category">Cà Phê Máy</h2>
           <div className="collections">
-            <ProductList />
+            <ProductList data={all} />
           </div>
         </div>
       </div>

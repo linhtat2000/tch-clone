@@ -15,7 +15,7 @@ import "./global.scss";
 function App() {
   return (
     <div className="App">
-      <div className="topbar-info">
+      {/* <div className="topbar-info">
         <div className="info">
           <LocationOnIcon className="info-icon" />
           <p>146 Cửa hàng khắp cả nước</p>
@@ -28,11 +28,11 @@ function App() {
           <DeliveryDiningIcon className="info-icon" />
           <p>Freeship từ 50.000vnđ</p>
         </div>
-      </div>
+      </div> */}
       <Navbar />
       <Routes>
         <Route path="/" element={<Homepage />} />
-        <Route path="/menu" element={<MenuPage />} />
+        <Route path="/menu/all" element={<MenuPage />} />
         <Route path="/blogs" element={<BlogPage />} />
       </Routes>
       <Footer />
