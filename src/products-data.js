@@ -39,7 +39,7 @@ export const tea = [
     name: "Trà Đào Cam Sả Đá",
     price: 45,
     salePrice: 32,
-    img: "tra-cam-sa.jpg",
+    img: "tra-cam-sa-da.jpg",
   },
 ];
 
@@ -70,7 +70,7 @@ export const coffee = [
     name: "Cappuchino Nóng",
     price: 49,
     salePrice: 34,
-    img: "cappuchino.jpg",
+    img: "cappuccino.jpg",
   },
   {
     id: 5,
@@ -132,7 +132,7 @@ export const snack = [
     name: "Chà Bông Phô Mai",
     price: 32,
     salePrice: null,
-    img: "cha-bong-pho-mai",
+    img: "cha-bong-pho-mai.jpg",
   },
   {
     id: 3,
@@ -156,7 +156,7 @@ export const atHome = [
     name: "Cà phê sữa đá pack 6 lon",
     price: 83,
     salePrice: null,
-    img: " pack-ca-phe-sua-da.jpg,",
+    img: "pack-ca-phe-sua-da.jpg",
   },
   {
     id: 2,
