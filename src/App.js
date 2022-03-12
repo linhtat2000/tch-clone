@@ -11,6 +11,7 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import DeliveryDiningIcon from "@mui/icons-material/DeliveryDining";
 
 import "./global.scss";
+import ProductPage from "./pages/product-page/ProductPage";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
         <Route path="/" element={<Homepage />} />
         <Route path="/menu/:category" element={<MenuPage />} />
         <Route path="/blogs" element={<BlogPage />} />
+        <Route path="/products/:product" element={<ProductPage />} />
       </Routes>
       <Footer />
     </div>

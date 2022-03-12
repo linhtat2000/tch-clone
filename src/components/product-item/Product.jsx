@@ -1,9 +1,16 @@
+import { Link } from "react-router-dom";
 import "./product.scss";
 
 const Product = ({ name, price, salePrice, img }) => {
   return (
     <div className="product">
-      <img src={"/image/" + img} alt={`${name}'s thumbnail`} className="img" />
+      <Link to="/products/product">
+        <img
+          src={"/image/" + img}
+          alt={`${name}'s thumbnail`}
+          className="img"
+        />
+      </Link>
       <div className="info">
         <p className="name">{name}</p>
         {salePrice ? (

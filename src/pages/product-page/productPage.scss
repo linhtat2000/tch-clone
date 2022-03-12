@@ -1,0 +1,15 @@
+@import "../../global.scss";
+
+.product-page {
+  display: flex;
+
+  .left {
+  }
+
+  .right {
+    .icon {
+      color: $primary-clr;
+      font-size: 2rem;
+    }
+  }
+}
