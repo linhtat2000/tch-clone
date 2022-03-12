@@ -148,13 +148,6 @@ export const snack = [
     salePrice: null,
     img: "banh-mi-vn-thit-nguoi.jpg",
   },
-  {
-    id: 5,
-    name: "Matcha Đá Xay",
-    price: 58,
-    salePrice: 40,
-    img: "matcha-da-xay.jpg",
-  },
 ];
 
 export const all = coffee.concat(fruitTea);

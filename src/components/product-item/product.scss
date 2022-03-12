@@ -21,16 +21,12 @@
     .price {
       font-size: 1.6rem;
       margin-top: 0.2em;
+      color: $primary-clr;
 
       &.sale {
-        color: $primary-clr;
+        color: #666;
+        text-decoration: line-through;
       }
-    }
-
-    .actual-price {
-      font-size: 1.6rem;
-      color: #666;
-      text-decoration: line-through;
     }
   }
 }
