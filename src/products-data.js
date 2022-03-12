@@ -119,4 +119,42 @@ export const iceBlended = [
   },
 ];
 
-export const all = [...coffee, ...fruitTea];
+export const snack = [
+  {
+    id: 1,
+    name: "Bánh Mì Que Pate Cay",
+    price: 12,
+    salePrice: null,
+    img: "banh-mi-que-pate.jpg",
+  },
+  {
+    id: 2,
+    name: "Chà Bông Phô Mai",
+    price: 32,
+    salePrice: null,
+    img: "cha-bong-pho-mai",
+  },
+  {
+    id: 3,
+    name: "Croissant Trứng Muối",
+    price: 32,
+    salePrice: null,
+    img: "croissant-trung-muoi.jpg",
+  },
+  {
+    id: 4,
+    name: "Bánh Mì VN Thịt Nguội",
+    price: 29,
+    salePrice: null,
+    img: "banh-mi-vn-thit-nguoi.jpg",
+  },
+  {
+    id: 5,
+    name: "Matcha Đá Xay",
+    price: 58,
+    salePrice: 40,
+    img: "matcha-da-xay.jpg",
+  },
+];
+
+export const all = coffee.concat(fruitTea);

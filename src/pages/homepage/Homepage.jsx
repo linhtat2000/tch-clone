@@ -3,6 +3,7 @@ import React from "react";
 import { Button, ThemeProvider } from "@mui/material";
 import BlogItem from "../../components/blog-item/BlogItem";
 import ProductList from "../../components/product-list/ProductList";
+import { all } from "../../products-data";
 
 import hcmStore1 from "../../assets/img/hcm-store-1.jpg";
 import hcmStore2 from "../../assets/img/hcm-store-2.jpg";
@@ -19,7 +20,7 @@ const Homepage = () => {
       <div className="homepage">
         <img src={banner} alt="Tet Holiday banner" className="banner" />
         <div className="collections">
-          <ProductList />
+          <ProductList data={all} />
         </div>
         <div className="new-products">
           <div className="item">
