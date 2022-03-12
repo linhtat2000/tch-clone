@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import CoffeeIcon from "@mui/icons-material/Coffee";
 
 import "./sidebar.scss";
@@ -6,61 +7,65 @@ import "./sidebar.scss";
 const Sidebar = () => {
   const [category, setCategory] = useState("all");
 
-  const handleClickCategory = (cate) => {
-    setCategory(cate);
-  };
+  console.log(category);
 
   return (
     <ul className="sidebar">
-      <li
+      <Link
+        to={`/menu/${category}`}
         className={category === "all" ? "category active" : "category"}
-        onClick={() => handleClickCategory("all")}
+        onClick={(e) => setCategory(e.target.id)}
       >
         {/* <CoffeeIcon className="coffee-icon" /> */}
-        <p>Tất cả</p>
-      </li>
-      <li
+        <p id="all">Tất cả</p>
+      </Link>
+      <Link
+        to={`/menu/${category}`}
         className={category === "coffee" ? "category active" : "category"}
-        onClick={() => handleClickCategory("coffee")}
+        onClick={(e) => setCategory(e.target.id)}
       >
-        <p>Cà phê</p>
-        <li className="sub-category">Cà phê Việt Nam</li>
+        <p id="coffee">Cà phê</p>
+        {/* <li className="sub-category">Cà phê Việt Nam</li>
         <li className="sub-category">Cà phê máy</li>
-        <li className="sub-category">Cold Brew</li>
-      </li>
-      <li
+      <li className="sub-category">Cold Brew</li> */}
+      </Link>
+      <Link
+        to={`/menu/${category}`}
         className={category === "tea" ? "category active" : "category"}
-        onClick={() => handleClickCategory("tea")}
+        onClick={(e) => setCategory(e.target.id)}
       >
-        <p>Trà</p>
-        <li className="sub-category">Trà trái cây</li>
-        <li className="sub-category">Trà sữa Macchiato</li>
-      </li>
-      <li
-        className={category === "other" ? "category active" : "category"}
-        onClick={() => handleClickCategory("other")}
+        <p id="tea">Trà</p>
+        {/* <li className="sub-category">Trà trái cây</li>
+        <li className="sub-category">Trà sữa Macchiato</li> */}
+      </Link>
+      <Link
+        to={`/menu/${category}`}
+        className={category === "iceBlended" ? "category active" : "category"}
+        onClick={(e) => setCategory(e.target.id)}
       >
-        <p>Món khác</p>
-        <li className="sub-category">Đá xay</li>
-        <li className="sub-category">Matcha - Chocolate</li>
-      </li>
-      <li
+        <p id="iceBlended">Đá xay</p>
+        {/* <li className="sub-category">Đá xay</li>
+        <li className="sub-category">Matcha - Chocolate</li> */}
+      </Link>
+      <Link
+        to={`/menu/${category}`}
         className={category === "snack" ? "category active" : "category"}
-        onClick={() => handleClickCategory("snack")}
+        onClick={(e) => setCategory(e.target.id)}
       >
-        <p>Bánh & Snack</p>
-        <li className="sub-category">Bánh mặn</li>
+        <p id="snack">Bánh & Snack</p>
+        {/* <li className="sub-category">Bánh mặn</li>
         <li className="sub-category">Bánh ngọt</li>
-        <li className="sub-category">Snack</li>
-      </li>
-      <li
-        className={category === "at-home" ? "category active" : "category"}
-        onClick={() => handleClickCategory("at-home")}
+        <li className="sub-category">Snack</li> */}
+      </Link>
+      <Link
+        to={`/menu/${category}`}
+        className={category === "atHome" ? "category active" : "category"}
+        onClick={(e) => setCategory(e.target.id)}
       >
-        <p>Tại nhà</p>
-        <li className="sub-category">Cà phê tại nhà</li>
-        <li className="sub-category">Trà tại nhà</li>
-      </li>
+        <p id="atHome">Tại nhà</p>
+        {/* <li className="sub-category">Cà phê tại nhà</li>
+        <li className="sub-category">Trà tại nhà</li> */}
+      </Link>
     </ul>
   );
 };

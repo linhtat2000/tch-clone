@@ -1,4 +1,4 @@
-export const fruitTea = [
+export const tea = [
   {
     id: 1,
     name: "Trà Dưa Đào Sung Túc",
@@ -150,4 +150,35 @@ export const snack = [
   },
 ];
 
-export const all = coffee.concat(fruitTea);
+export const atHome = [
+  {
+    id: 1,
+    name: "Cà phê sữa đá pack 6 lon",
+    price: 83,
+    salePrice: null,
+    img: " pack-ca-phe-sua-da.jpg,",
+  },
+  {
+    id: 2,
+    name: "Cà Phê Rich Finish Gu Đậm Tinh Tế 350gr",
+    price: 65,
+    salePrice: 89,
+    img: "ca-phe-rich-finish-dam.jpg",
+  },
+  {
+    id: 3,
+    name: "Cà Phê Peak Flavor Hương Thơm Đỉnh Cao 350gr",
+    price: 65,
+    salePrice: 89,
+    img: "ca-phe-peak-flavor.jpg",
+  },
+  {
+    id: 4,
+    name: "Cà Phê Arabica",
+    price: 98,
+    salePrice: null,
+    img: "ca-phe-arabica.jpg",
+  },
+];
+
+export const all = coffee.concat(tea);

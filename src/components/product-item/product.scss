@@ -10,9 +10,11 @@
   }
 
   .info {
+    width: 220px;
     margin-left: 1em;
 
     .name {
+      width: 100%;
       font-size: 1.7rem;
       font-weight: 500;
       margin-top: 0.6em;
@@ -20,7 +22,7 @@
 
     .price {
       font-size: 1.6rem;
-      margin-top: 0.2em;
+      margin-top: 0.3em;
       color: $primary-clr;
 
       &.sale {
