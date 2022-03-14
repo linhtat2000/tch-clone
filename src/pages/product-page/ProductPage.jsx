@@ -27,7 +27,7 @@ const ProductPage = () => {
           </Link>
           <p className="breadcrumb-current">Product</p>
         </Breadcrumbs>
-        <div className="product-page">
+        <div className="product-info">
           <div className="left">
             <img
               src="/image/ca-phe-peak-flavor.jpg"
@@ -36,7 +36,7 @@ const ProductPage = () => {
             />
           </div>
           <div className="right">
-            <h2 className="heading">Cà Phê Đá Xay</h2>
+            <h1 className="heading">Cà Phê Đá Xay</h1>
             <p className="price">58.000đ</p>
             <div className="quantity-container">
               <h3>Số lượng:</h3>
@@ -71,6 +71,27 @@ const ProductPage = () => {
                 <p>Mua tại cửa hàng</p>
               </Button>
             </div>
+          </div>
+        </div>
+        <div className="product-desc">
+          <div className="left">
+            <h2>Thông Tin</h2>
+            <p className="desc">
+              Không ngọt ngào như Bạc sỉu hay Cà phê sữa, Cà phê đen mang trong
+              mình phong vị trầm lắng, thi vị hơn. Người ta thường phải ngồi rất
+              lâu mới cảm nhận được hết hương thơm ngào ngạt, phảng phất mùi
+              cacao và cái đắng mượt mà trôi tuột xuống vòm họng.
+            </p>
+          </div>
+          <div className="right">
+            <h2>Câu Chuyện</h2>
+            <h3 className="bold">Cà phê đen - Phong vị trầm lắng hảo hạng</h3>
+            <p className="desc">
+              Một tách cà phê thơm ngào ngạt, phảng phất mùi cacao là món quà tự
+              thưởng tuyệt vời nhất cho những ai mê đắm tinh chất nguyên bản
+              nhất của cà phê.
+            </p>
+            <p className="more">Xem thêm</p>
           </div>
         </div>
       </Container>

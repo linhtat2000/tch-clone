@@ -1,7 +1,12 @@
 @import "../../global.scss";
 
-h3 {
+h2 {
   font-size: 2rem;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 1.8rem;
   font-weight: 400;
 }
 
@@ -28,10 +33,11 @@ h3 {
     }
   }
 
-  .product-page {
+  .product-info {
     display: flex;
-
     margin-top: 2.4em;
+    padding-bottom: 3.6em;
+    border-bottom: 1px solid #eee;
 
     .left {
       flex: 1;
@@ -123,6 +129,32 @@ h3 {
             margin-right: 0.4em;
           }
         }
+      }
+    }
+  }
+
+  .product-desc {
+    margin: 2.4em 0 4.2em;
+    display: flex;
+
+    .left {
+      width: 600px;
+    }
+
+    .right {
+      margin-left: 20em;
+
+      .bold {
+        color: #ff661f;
+        font-weight: 500;
+        margin: 0.4em 0;
+      }
+
+      .more {
+        cursor: pointer;
+        color: $primary-clr;
+        font-weight: 500;
+        margin-top: 0.6em;
       }
     }
   }
