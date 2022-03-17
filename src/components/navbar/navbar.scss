@@ -15,10 +15,10 @@
   align-items: center;
 
   .left {
+    width: 200px;
     .logo {
-      width: 210px;
-      position: relative;
-      top: -60px;
+      width: 100%;
+      background-color: rebeccapurple;
     }
   }
 

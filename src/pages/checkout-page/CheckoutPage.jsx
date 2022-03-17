@@ -11,10 +11,10 @@ import "./checkoutPage.scss";
 const CheckoutPage = () => {
   return (
     <div className="checkout-page">
-      <h1>
+      <div className="header">
         <InsertDriveFileIcon className="heading-icon" />
-        Xác nhận đơn hàng
-      </h1>
+        <h1>Xác nhận đơn hàng</h1>
+      </div>
 
       <Container maxWidth="lg" className="checkout-container">
         <div className="left">
@@ -30,7 +30,13 @@ const CheckoutPage = () => {
           <div className="payment-method">
             <h2 className="heading">Phương thức thanh toán</h2>
             <div className="cod">
-              <input type="radio" id="cod" name="payment" value="cod" />
+              <input
+                type="radio"
+                id="cod"
+                name="payment"
+                value="cod"
+                defaultChecked
+              />
               <AttachMoneyIcon className="payment-icon" />
               <label htmlFor="cod">Tiền mặt</label>
             </div>
@@ -41,7 +47,7 @@ const CheckoutPage = () => {
             </div>
           </div>
           <div className="policy">
-            <input type="checkbox" />
+            <input type="checkbox" className="policy-box" />
             <p>
               Đồng ý với các <em>điều khoản và điều kiện</em> mua hàng của The
               Coffee House
@@ -54,31 +60,38 @@ const CheckoutPage = () => {
               <h2 className="heading">Các món đã chọn</h2>
               <div className="item">
                 <EditIcon className="edit-icon" />
-                <h3 className="item-name">Coffee</h3>
-                <p className="item-quantity">2</p>
+                <div className="item-info">
+                  <h3 className="item-name">
+                    Lorem ipsum dolor sit amet consectetur frraejkfha sndasd nak
+                  </h3>
+                  <p className="item-size">
+                    Vừa
+                    <span className="item-quantity">x2</span>
+                  </p>
+                  <p className="item-delete">Xóa</p>
+                </div>
                 <p className="item-price">40.600đ</p>
-                <div className="item-delete">Xóa</div>
               </div>
             </div>
             <div className="subtotal">
               <h2 className="heading">Tổng cộng</h2>
               <div className="price shipping">
                 <p>Phí vận chuyển</p>
-                <p>40.600đ</p>
+                <p>10.000đ</p>
               </div>
               <div className="price promote">
                 <p>Khuyến mãi</p>
-                <p>10.000đ</p>
+                <p>15.000đ</p>
               </div>
             </div>
-            <div className="total">
-              <div className="total-left">
-                <p>Thành tiền</p>
-                <p>50.600đ</p>
-              </div>
-              <div className="total-right">
-                <button className="submit-order">Đặt hàng</button>
-              </div>
+          </div>
+          <div className="total">
+            <div className="total-left">
+              <p>Thành tiền</p>
+              <p className="total-price">50.600đ</p>
+            </div>
+            <div className="total-right">
+              <button className="submit-order">Đặt hàng</button>
             </div>
           </div>
           <div className="delete-order">
