@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Container } from "@mui/material";
 import {
   AddCircle,
@@ -15,6 +15,16 @@ import theme from "../../theme";
 import "./productPage.scss";
 
 const ProductPage = () => {
+  const [quantity, setQuantity] = useState(1);
+
+  const handleQuantity = (type) => {
+    if (type === "inc") {
+      setQuantity((prev) => prev + 1);
+    } else if (type === "dec" && quantity > 1) {
+      setQuantity((prev) => prev - 1);
+    }
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <Container maxWidth="lg" className="container">
@@ -41,9 +51,19 @@ const ProductPage = () => {
             <div className="quantity-container">
               <h3>Số lượng:</h3>
               <div className="quantity-wrapper">
-                <AddCircle className="icon" />
-                <p className="quantity">1</p>
-                <RemoveCircle className="icon" />
+                <AddCircle
+                  className="icon"
+                  onClick={() => {
+                    handleQuantity("inc");
+                  }}
+                />
+                <p className="quantity">{quantity}</p>
+                <RemoveCircle
+                  className="icon"
+                  onClick={() => {
+                    handleQuantity("dec");
+                  }}
+                />
               </div>
             </div>
             <div className="size">

@@ -1,0 +1,101 @@
+@import "../../global.scss";
+
+.checkout-page {
+  margin-top: 7em;
+
+  h1 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 500;
+    margin-bottom: 1em;
+
+    .heading-icon {
+      color: #fad207;
+      font-size: 2.6rem;
+      margin-left: 1em;
+    }
+  }
+
+  .heading {
+    position: relative;
+    margin: 1.6em 0;
+  }
+
+  .heading::after {
+    content: "";
+    display: block;
+    width: 54px;
+    height: 2px;
+    border-radius: 6px;
+    background-color: $primary-clr;
+    position: absolute;
+    left: 0;
+    bottom: -0.2em;
+  }
+
+  .checkout-container {
+    display: flex;
+    justify-content: space-between;
+
+    .left {
+      flex: 1;
+      max-width: 450px;
+
+      .customer-info {
+        .info {
+          display: flex;
+          flex-direction: column;
+
+          input {
+            padding: 1.2em 1.6em;
+            border: 1px solid #ddd;
+            margin-bottom: 1em;
+          }
+        }
+      }
+
+      .payment-method {
+        label {
+          font-size: 1.8rem;
+        }
+
+        input {
+        }
+
+        .payment-icon {
+          font-size: 2.6rem;
+          margin-left: 0.8em;
+          margin-right: 0.2em;
+        }
+
+        .cod,
+        .card {
+          display: flex;
+          align-items: center;
+        }
+      }
+
+      .policy {
+      }
+    }
+
+    .right {
+      flex: 1;
+      max-width: 450px;
+
+      .receipt-container {
+        .orders {
+        }
+
+        .subtotal {
+        }
+
+        .total {
+        }
+      }
+
+      .delete-order {
+      }
+    }
+  }
+}
