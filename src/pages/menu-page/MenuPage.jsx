@@ -21,9 +21,8 @@ const MenuPage = () => {
 
   switch (categories) {
     case "coffee":
-      heading = "Cà Phê";
+      heading = "Cà Phê Việt Nam";
       data = coffee;
-
       break;
     case "tea":
       heading = "Trà";

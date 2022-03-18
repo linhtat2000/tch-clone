@@ -5,6 +5,7 @@ export const tea = [
     price: 58,
     salePrice: 40,
     img: "tra-dao-dua-luoi.jpg",
+    cate: "tea",
   },
   {
     id: 2,
@@ -12,6 +13,7 @@ export const tea = [
     price: 58,
     salePrice: 40,
     img: "tra-sen-nhan.jpg",
+    cate: "tea",
   },
   {
     id: 3,
@@ -19,6 +21,7 @@ export const tea = [
     price: 45,
     salePrice: 32,
     img: "tra-sen-da.jpg",
+    cate: "tea",
   },
   {
     id: 4,
@@ -26,6 +29,7 @@ export const tea = [
     price: 51,
     salePrice: 36,
     img: "tra-sen-nong.jpg",
+    cate: "tea",
   },
   {
     id: 5,
@@ -33,6 +37,7 @@ export const tea = [
     price: 45,
     salePrice: 32,
     img: "nhan-hat-chia.png",
+    cate: "tea",
   },
   {
     id: 6,
@@ -40,6 +45,7 @@ export const tea = [
     price: 45,
     salePrice: 32,
     img: "tra-cam-sa-da.jpg",
+    cate: "tea",
   },
 ];
 
@@ -50,6 +56,7 @@ export const coffee = [
     price: 59,
     salePrice: 35,
     img: "mocha-nong.jpg",
+    cate: "coffee",
   },
   {
     id: 2,
@@ -57,6 +64,7 @@ export const coffee = [
     price: 58,
     salePrice: 40,
     img: "latte-tao-le-que-da.jpg",
+    cate: "coffee",
   },
   {
     id: 3,
@@ -64,6 +72,7 @@ export const coffee = [
     price: 58,
     salePrice: 40,
     img: "latte-tao-le-que-nong.jpg",
+    cate: "coffee",
   },
   {
     id: 4,
@@ -71,6 +80,7 @@ export const coffee = [
     price: 49,
     salePrice: 34,
     img: "cappuccino.jpg",
+    cate: "coffee",
   },
   {
     id: 5,
@@ -78,6 +88,7 @@ export const coffee = [
     price: 40,
     salePrice: 28,
     img: "espresso-nong.jpg",
+    cate: "coffee",
   },
 ];
 
@@ -88,6 +99,7 @@ export const iceBlended = [
     price: 58,
     salePrice: 40,
     img: "chocolate-ice-blended.jpg",
+    cate: "iceBlended",
   },
   {
     id: 2,
@@ -95,6 +107,7 @@ export const iceBlended = [
     price: 58,
     salePrice: 40,
     img: "dao-viet-quat.jpg",
+    cate: "iceBlended",
   },
   {
     id: 3,
@@ -102,6 +115,7 @@ export const iceBlended = [
     price: 58,
     salePrice: 40,
     img: "cookies-da-xay.jpg",
+    cate: "iceBlended",
   },
   {
     id: 4,
@@ -109,6 +123,7 @@ export const iceBlended = [
     price: 58,
     salePrice: 40,
     img: "sinh-to-viet-quoc.jpg",
+    cate: "iceBlended",
   },
   {
     id: 5,
@@ -116,6 +131,7 @@ export const iceBlended = [
     price: 58,
     salePrice: 40,
     img: "matcha-da-xay.jpg",
+    cate: "iceBlended",
   },
 ];
 
@@ -126,6 +142,7 @@ export const snack = [
     price: 12,
     salePrice: null,
     img: "banh-mi-que-pate.jpg",
+    cate: "snack",
   },
   {
     id: 2,
@@ -133,6 +150,7 @@ export const snack = [
     price: 32,
     salePrice: null,
     img: "cha-bong-pho-mai.jpg",
+    cate: "snack",
   },
   {
     id: 3,
@@ -140,6 +158,7 @@ export const snack = [
     price: 32,
     salePrice: null,
     img: "croissant-trung-muoi.jpg",
+    cate: "snack",
   },
   {
     id: 4,
@@ -147,6 +166,7 @@ export const snack = [
     price: 29,
     salePrice: null,
     img: "banh-mi-vn-thit-nguoi.jpg",
+    cate: "snack",
   },
 ];
 
@@ -157,6 +177,7 @@ export const atHome = [
     price: 83,
     salePrice: null,
     img: "pack-ca-phe-sua-da.jpg",
+    cate: "atHome",
   },
   {
     id: 2,
@@ -164,6 +185,7 @@ export const atHome = [
     price: 65,
     salePrice: 89,
     img: "ca-phe-rich-finish-dam.jpg",
+    cate: "atHome",
   },
   {
     id: 3,
@@ -171,6 +193,7 @@ export const atHome = [
     price: 65,
     salePrice: 89,
     img: "ca-phe-peak-flavor.jpg",
+    cate: "atHome",
   },
   {
     id: 4,
@@ -178,6 +201,7 @@ export const atHome = [
     price: 98,
     salePrice: null,
     img: "ca-phe-arabica.jpg",
+    cate: "atHome",
   },
 ];
 

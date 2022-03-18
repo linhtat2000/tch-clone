@@ -5,14 +5,14 @@ import Navbar from "./components/navbar/Navbar";
 import Homepage from "./pages/homepage/Homepage";
 import MenuPage from "./pages/menu-page/MenuPage";
 import BlogPage from "./pages/blog-page/BlogPage";
+import ProductPage from "./pages/product-page/ProductPage";
+import CheckoutPage from "./pages/checkout-page/CheckoutPage";
 
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import PhoneIcon from "@mui/icons-material/Phone";
 import DeliveryDiningIcon from "@mui/icons-material/DeliveryDining";
 
 import "./global.scss";
-import ProductPage from "./pages/product-page/ProductPage";
-import CheckoutPage from "./pages/checkout-page/CheckoutPage";
 
 function App() {
   return (
@@ -36,7 +36,7 @@ function App() {
         <Route path="/" element={<Homepage />} />
         <Route path="/menu/:category" element={<MenuPage />} />
         <Route path="/blogs" element={<BlogPage />} />
-        <Route path="/products/:product" element={<ProductPage />} />
+        <Route path="/:cate/:productId" element={<ProductPage />} />
         <Route path="/checkout" element={<CheckoutPage />} />
       </Routes>
       <Footer />

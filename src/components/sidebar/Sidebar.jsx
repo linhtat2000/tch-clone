@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import CoffeeIcon from "@mui/icons-material/Coffee";
 
@@ -6,6 +6,12 @@ import "./sidebar.scss";
 
 const Sidebar = () => {
   const [category, setCategory] = useState("all");
+
+  // useEffect(() => {
+  //   const handleClick = (e) => {
+  //     console.log(e.target.id);
+  //   };
+  // });
 
   console.log(category);
 

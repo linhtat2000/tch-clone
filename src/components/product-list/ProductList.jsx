@@ -9,10 +9,12 @@ const ProductList = ({ data }) => {
         return (
           <Product
             key={index}
+            id={product.id}
             name={product.name}
             price={product.price}
             salePrice={product.salePrice}
             img={product.img}
+            cate={product.cate}
           />
         );
       })}
