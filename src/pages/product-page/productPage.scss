@@ -91,7 +91,7 @@ h3 {
         .size-btn {
           font-size: 1.6rem;
           text-transform: none;
-          margin: 1em 1.2em 2em 0;
+          margin: 1em 1.2em 0 0;
           border-radius: 2px;
           box-shadow: none;
 
@@ -116,6 +116,7 @@ h3 {
       .cart {
         display: flex;
         flex-direction: column;
+        margin-top: 4em;
 
         .cart-btn {
           border-radius: 8px;
@@ -138,13 +139,17 @@ h3 {
     display: flex;
 
     .left {
-      width: 600px;
+      min-width: 400px;
+
+      .desc {
+        margin-top: 0.6em;
+      }
     }
 
     .right {
       margin-left: 20em;
 
-      .bold {
+      .story-header {
         color: #ff661f;
         font-weight: 500;
         margin: 0.4em 0;

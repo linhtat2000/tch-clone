@@ -65,6 +65,19 @@ const ProductPage = () => {
     }
   };
 
+  const handleSizeClassname = (size) => {
+    switch (size) {
+      case "Nhỏ":
+        return "icon sm";
+      case "Vừa":
+        return "icon md";
+      case "Lớn":
+        return "icon lg";
+      default:
+        return "icon";
+    }
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <Container maxWidth="lg" className="container">
@@ -119,17 +132,25 @@ const ProductPage = () => {
                         />
                       </div>
                     </div>
-                    <div className="size">
-                      <h3>Kích thước:</h3>
-                      <Button variant="contained" className="size-btn">
-                        <CoffeeIcon className="icon md" />
-                        <p>Vừa</p>
-                      </Button>
-                      <Button variant="contained" className="size-btn">
-                        <CoffeeIcon className="icon lg" />
-                        <p>Lớn</p>
-                      </Button>
-                    </div>
+                    {product.size ? (
+                      <div className="size">
+                        <h3>Kích thước:</h3>
+                        {product.size.map((size, index) => {
+                          return (
+                            <Button
+                              variant="contained"
+                              className="size-btn"
+                              key={index}
+                            >
+                              <CoffeeIcon
+                                className={handleSizeClassname(size)}
+                              />
+                              <p>{size}</p>
+                            </Button>
+                          );
+                        })}
+                      </div>
+                    ) : null}
                     <div className="cart">
                       <Button variant="contained" className="cart-btn">
                         <ShoppingCart className="icon" />
@@ -149,24 +170,12 @@ const ProductPage = () => {
                 <div className="product-desc">
                   <div className="left">
                     <h2>Thông Tin</h2>
-                    <p className="desc">
-                      Không ngọt ngào như Bạc sỉu hay Cà phê sữa, Cà phê đen
-                      mang trong mình phong vị trầm lắng, thi vị hơn. Người ta
-                      thường phải ngồi rất lâu mới cảm nhận được hết hương thơm
-                      ngào ngạt, phảng phất mùi cacao và cái đắng mượt mà trôi
-                      tuột xuống vòm họng.
-                    </p>
+                    <p className="desc">{product.desc}</p>
                   </div>
                   <div className="right">
                     <h2>Câu Chuyện</h2>
-                    <h3 className="bold">
-                      Cà phê đen - Phong vị trầm lắng hảo hạng
-                    </h3>
-                    <p className="desc">
-                      Một tách cà phê thơm ngào ngạt, phảng phất mùi cacao là
-                      món quà tự thưởng tuyệt vời nhất cho những ai mê đắm tinh
-                      chất nguyên bản nhất của cà phê.
-                    </p>
+                    <h3 className="story-header">{product.story[0]}</h3>
+                    <p className="desc">{product.story[1]}</p>
                     <p className="more">Xem thêm</p>
                   </div>
                 </div>
