@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/Navbar";
@@ -31,15 +31,17 @@ function App() {
           <p>Freeship từ 50.000vnđ</p>
         </div>
       </div> */}
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/menu/:category" element={<MenuPage />} />
-        <Route path="/blogs" element={<BlogPage />} />
-        <Route path="/:cate/:productId" element={<ProductPage />} />
-        <Route path="/checkout" element={<CheckoutPage />} />
-      </Routes>
-      <Footer />
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/menu/:category" element={<MenuPage />} />
+          <Route path="/blogs" element={<BlogPage />} />
+          <Route path="/:cate/:productId" element={<ProductPage />} />
+          <Route path="/checkout" element={<CheckoutPage />} />
+        </Routes>
+        <Footer />
+      </Router>
     </div>
   );
 }

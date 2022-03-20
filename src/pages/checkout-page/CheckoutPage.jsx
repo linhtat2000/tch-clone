@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Container } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
@@ -9,6 +10,10 @@ import InsertDriveFileIcon from "@mui/icons-material/InsertDriveFile";
 import "./checkoutPage.scss";
 
 const CheckoutPage = () => {
+  const cart = useSelector((state) => state.cart);
+
+  console.log(cart.products);
+
   return (
     <div className="checkout-page">
       <div className="header">
@@ -58,20 +63,20 @@ const CheckoutPage = () => {
           <div className="receipt-container">
             <div className="orders">
               <h2 className="heading">Các món đã chọn</h2>
-              <div className="item">
-                <EditIcon className="edit-icon" />
-                <div className="item-info">
-                  <h3 className="item-name">
-                    Lorem ipsum dolor sit amet consectetur frraejkfha sndasd nak
-                  </h3>
-                  <p className="item-size">
-                    Vừa
-                    <span className="item-quantity">x2</span>
-                  </p>
-                  <p className="item-delete">Xóa</p>
+              {cart.products.map((product, index) => (
+                <div className="item" key={index}>
+                  <EditIcon className="edit-icon" />
+                  <div className="item-info">
+                    <h3 className="item-name">{product.name}</h3>
+                    <p className="item-size">
+                      Vừa
+                      <span className="item-quantity">x{product.quantity}</span>
+                    </p>
+                    <p className="item-delete">Xóa</p>
+                  </div>
+                  <p className="item-price">{product.price}.000đ</p>
                 </div>
-                <p className="item-price">40.600đ</p>
-              </div>
+              ))}
             </div>
             <div className="subtotal">
               <h2 className="heading">Tổng cộng</h2>

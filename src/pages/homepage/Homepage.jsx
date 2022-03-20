@@ -25,7 +25,7 @@ const Homepage = () => {
           </div>
         </Container>
         <div className="new-products">
-          <Container mawWidth="lg">
+          <Container maxWidth="lg">
             <div className="item">
               <div className="left">
                 <h2 className="header">Trà Sen Nhãn Sum Vầy</h2>

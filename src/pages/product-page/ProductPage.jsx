@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { Button, Container } from "@mui/material";
 import {
   AddCircle,
@@ -20,12 +21,16 @@ import {
   iceBlended,
   atHome,
 } from "../../products-data";
+import { addProduct } from "../../redux/cartRedux";
 
 import "./productPage.scss";
 
 const ProductPage = () => {
   const [quantity, setQuantity] = useState(1);
+  const [product, setProduct] = useState({});
   const location = useLocation();
+  const dispatch = useDispatch();
+
   const categories = location.pathname.split("/")[1];
   const productId = location.pathname.split("/")[2];
   let data;
@@ -57,6 +62,14 @@ const ProductPage = () => {
       data = all;
   }
 
+  useEffect(() => {
+    data.map((item) => {
+      if (item.id === Number(productId)) {
+        setProduct(item);
+      }
+    });
+  }, [data, productId, product]);
+
   const handleQuantity = (type) => {
     if (type === "inc") {
       setQuantity((prev) => prev + 1);
@@ -78,111 +91,107 @@ const ProductPage = () => {
     }
   };
 
+  const { name, price, salePrice } = product;
+
+  const handleClick = () => {
+    dispatch(addProduct({ name, price, salePrice, quantity }));
+    console.log("add to cart");
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <Container maxWidth="lg" className="container">
-        {data.map((product, index) => {
-          if (product.id === Number(productId)) {
-            return (
-              <div key={index}>
-                <Breadcrumbs aria-label="breadcrumb" className="breadcrumb">
-                  <Link
-                    color="inherit"
-                    href="/menu/all"
-                    className="breadcrumb-link"
-                  >
-                    Menu
-                  </Link>
-                  <Link
-                    color="inherit"
-                    href={`/menu/${product.cate}`}
-                    className="breadcrumb-link"
-                  >
-                    {heading}
-                  </Link>
-                  <p className="breadcrumb-current">Product</p>
-                </Breadcrumbs>
-
-                <div className="product-info">
-                  <div className="left">
-                    <img
-                      src={`/image/${product.img}`}
-                      alt={`product's thumbnail`}
-                      className="img"
-                    />
-                  </div>
-                  <div className="right">
-                    <h1 className="heading">{product.name}</h1>
-                    <p className="price">{product.price}.000đ</p>
-                    <div className="quantity-container">
-                      <h3>Số lượng:</h3>
-                      <div className="quantity-wrapper">
-                        <RemoveCircle
-                          className="icon"
-                          onClick={() => {
-                            handleQuantity("dec");
-                          }}
-                        />
-                        <p className="quantity">{quantity}</p>
-                        <AddCircle
-                          className="icon"
-                          onClick={() => {
-                            handleQuantity("inc");
-                          }}
-                        />
-                      </div>
-                    </div>
-                    {product.size ? (
-                      <div className="size">
-                        <h3>Kích thước:</h3>
-                        {product.size.map((size, index) => {
-                          return (
-                            <Button
-                              variant="contained"
-                              className="size-btn"
-                              key={index}
-                            >
-                              <CoffeeIcon
-                                className={handleSizeClassname(size)}
-                              />
-                              <p>{size}</p>
-                            </Button>
-                          );
-                        })}
-                      </div>
-                    ) : null}
-                    <div className="cart">
-                      <Button variant="contained" className="cart-btn">
-                        <ShoppingCart className="icon" />
-                        <p>Thêm vào giỏ hàng</p>
-                      </Button>
-                      <Button
-                        variant="contained"
-                        className="cart-btn"
-                        color="secondary"
-                      >
-                        <Store className="icon" />
-                        <p>Mua tại cửa hàng</p>
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-                <div className="product-desc">
-                  <div className="left">
-                    <h2>Thông Tin</h2>
-                    <p className="desc">{product.desc}</p>
-                  </div>
-                  <div className="right">
-                    <h2>Câu Chuyện</h2>
-                    <h3 className="story-header">{product.story[0]}</h3>
-                    <p className="desc">{product.story[1]}</p>
-                    <p className="more">Xem thêm</p>
-                  </div>
-                </div>
+        <Breadcrumbs aria-label="breadcrumb" className="breadcrumb">
+          <Link color="inherit" href="/menu/all" className="breadcrumb-link">
+            Menu
+          </Link>
+          <Link
+            color="inherit"
+            href={`/menu/${product.cate}`}
+            className="breadcrumb-link"
+          >
+            {heading}
+          </Link>
+          <p className="breadcrumb-current">Product</p>
+        </Breadcrumbs>
+        <div className="product-info">
+          <div className="left">
+            <img
+              src={`/image/${product.img}`}
+              alt={`product's thumbnail`}
+              className="img"
+            />
+          </div>
+          <div className="right">
+            <h1 className="heading">{product.name}</h1>
+            <p className="price">{product.price}.000đ</p>
+            <div className="quantity-container">
+              <h3>Số lượng:</h3>
+              <div className="quantity-wrapper">
+                <RemoveCircle
+                  className="icon"
+                  onClick={() => {
+                    handleQuantity("dec");
+                  }}
+                />
+                <p className="quantity">{quantity}</p>
+                <AddCircle
+                  className="icon"
+                  onClick={() => {
+                    handleQuantity("inc");
+                  }}
+                />
               </div>
-            );
-          }
-        })}
+            </div>
+            {product.size ? (
+              <div className="size">
+                <h3>Kích thước:</h3>
+                {product.size.map((size, index) => {
+                  return (
+                    <Button
+                      variant="contained"
+                      className="size-btn"
+                      key={index}
+                    >
+                      <CoffeeIcon className={handleSizeClassname(size)} />
+                      <p>{size}</p>
+                    </Button>
+                  );
+                })}
+              </div>
+            ) : null}
+            <div className="cart">
+              <Button
+                variant="contained"
+                className="cart-btn"
+                onClick={handleClick}
+              >
+                <ShoppingCart className="icon" />
+                <p>Thêm vào giỏ hàng</p>
+              </Button>
+              <Button
+                variant="contained"
+                className="cart-btn"
+                color="secondary"
+              >
+                <Store className="icon" />
+                <p>Mua tại cửa hàng</p>
+              </Button>
+            </div>
+          </div>
+        </div>
+        <div className="product-desc">
+          <div className="left">
+            <h2>Thông Tin</h2>
+            <p className="desc">{product.desc}</p>
+          </div>
+          <div className="right">
+            <h2>Câu Chuyện</h2>
+            <h3 className="story-header">{product.story}</h3>
+            <p className="desc">{product.story}</p>
+            <p className="more">Xem thêm</p>
+          </div>
+        </div>
       </Container>
     </ThemeProvider>
   );
