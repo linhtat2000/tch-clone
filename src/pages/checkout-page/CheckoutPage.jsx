@@ -12,7 +12,17 @@ import "./checkoutPage.scss";
 const CheckoutPage = () => {
   const cart = useSelector((state) => state.cart);
 
-  console.log(cart.products);
+  const itemQuantity = cart.products.map((item) => {
+    return item.quantity;
+  });
+
+  const totalItem = itemQuantity.reduce(
+    (preValue, currentValue) => preValue + currentValue,
+    0
+  );
+
+  console.log(totalItem);
+  console.log(cart);
 
   return (
     <div className="checkout-page">
@@ -65,7 +75,14 @@ const CheckoutPage = () => {
               <h2 className="heading">Các món đã chọn</h2>
               {cart.products.map((product, index) => (
                 <div className="item" key={index}>
-                  <EditIcon className="edit-icon" />
+                  <div className="item-thumbnail">
+                    <EditIcon className="edit-icon" />
+                    <img
+                      src={`/image/${product.img}`}
+                      alt={`${product.name}'s thumbnail'`}
+                      className="item-img"
+                    />
+                  </div>
                   <div className="item-info">
                     <h3 className="item-name">{product.name}</h3>
                     <p className="item-size">
@@ -93,7 +110,11 @@ const CheckoutPage = () => {
           <div className="total">
             <div className="total-left">
               <p>Thành tiền</p>
-              <p className="total-price">50.600đ</p>
+              <p className="total-price">{cart.total}.000đ</p>
+            </div>
+            <div className="total-center">
+              <p>Số lượng</p>
+              <p className="total-quantity">x {totalItem}</p>
             </div>
             <div className="total-right">
               <button className="submit-order">Đặt hàng</button>

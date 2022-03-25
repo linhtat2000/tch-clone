@@ -126,17 +126,30 @@
         padding: 1.6em 2em 2.6em;
 
         .orders {
-          margin-bottom: 4em;
+          margin-bottom: 3em;
 
           .item {
             display: flex;
             align-items: center;
             justify-content: space-between;
+            margin-bottom: 2em;
 
-            .edit-icon {
-              color: $primary-clr;
-              font-size: 2.4rem;
-              cursor: pointer;
+            .item-thumbnail {
+              width: 100px;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+
+              .edit-icon {
+                color: $primary-clr;
+                font-size: 2rem;
+                margin-right: 0.4em;
+                cursor: pointer;
+              }
+
+              .item-img {
+                width: 70%;
+              }
             }
 
             .item-info {
@@ -195,13 +208,12 @@
         border-bottom-left-radius: 8px;
         border-bottom-right-radius: 8px;
         padding: 1.6em 2em 1.6em;
-        box-shadow: 1px 6px 12px #ddd;
+        box-shadow: 1px 6px 12px #eee;
 
-        .total-left {
-          .total-price {
-            font-size: 2rem;
-            color: #fff;
-          }
+        .total-price,
+        .total-quantity {
+          font-size: 2rem;
+          color: #fff;
         }
 
         .total-right {
@@ -222,7 +234,8 @@
       }
 
       .delete-order {
-        padding-top: 2em;
+        padding: 1.6em 0;
+        margin-bottom: 2em;
         width: 100%;
         height: 60px;
         color: $primary-clr;

@@ -6,7 +6,6 @@ import "./cart.scss";
 
 const Cart = () => {
   const cartQuantity = useSelector((state) => state.cart.quantity);
-  console.log(cartQuantity);
 
   return (
     <div className={cartQuantity ? "cart" : "cart empty-cart"}>
