@@ -160,7 +160,7 @@ const ProductPage = () => {
                 })}
               </div>
             ) : null}
-            <div className="cart">
+            <div className="cart-wrapper">
               <Button
                 variant="contained"
                 className="cart-btn"

@@ -3,6 +3,7 @@ import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import logo from "../../assets/img/logo.png";
 
 import "./navbar.scss";
+import Cart from "../cart/Cart";
 
 const Navbar = () => {
   return (
@@ -31,9 +32,7 @@ const Navbar = () => {
 
       <div className="right">
         <Link to="/checkout">
-          <div className="cart empty-cart">
-            <ShoppingBagIcon className="cart-icon" />
-          </div>
+          <Cart />
         </Link>
       </div>
     </nav>
