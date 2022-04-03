@@ -1,16 +1,18 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Container } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import DeleteIcon from "@mui/icons-material/Delete";
 import InsertDriveFileIcon from "@mui/icons-material/InsertDriveFile";
+import { deleteOrder, deleteProduct } from "../../redux/cartRedux";
 
 import "./checkoutPage.scss";
 
 const CheckoutPage = () => {
   const cart = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
 
   const itemQuantity = cart.products.map((item) => {
     return item.quantity;
@@ -21,8 +23,16 @@ const CheckoutPage = () => {
     0
   );
 
-  console.log(totalItem);
-  console.log(cart);
+  const handleDeleteProduct = (index, product) => {
+    dispatch(deleteProduct(index));
+    cart.total -= product.price * product.quantity;
+  };
+
+  console.log(cart.total);
+
+  const handleDeleteOrder = () => {
+    dispatch(deleteOrder());
+  };
 
   return (
     <div className="checkout-page">
@@ -89,7 +99,12 @@ const CheckoutPage = () => {
                       Vừa
                       <span className="item-quantity">x{product.quantity}</span>
                     </p>
-                    <p className="item-delete">Xóa</p>
+                    <p
+                      className="item-delete"
+                      onClick={() => handleDeleteProduct(index, product)}
+                    >
+                      Xóa
+                    </p>
                   </div>
                   <p className="item-price">{product.price}.000đ</p>
                 </div>
@@ -120,7 +135,7 @@ const CheckoutPage = () => {
               <button className="submit-order">Đặt hàng</button>
             </div>
           </div>
-          <div className="delete-order">
+          <div className="delete-order" onClick={handleDeleteOrder}>
             <DeleteIcon className="delete-icon" />
             <p>Xóa đơn hàng</p>
           </div>

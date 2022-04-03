@@ -91,11 +91,11 @@ const ProductPage = () => {
     }
   };
 
-  const { name, price, salePrice, img } = product;
+  const { name, price, salePrice, img, id } = product;
 
   const handleClick = () => {
     dispatch(addProduct({ name, price, salePrice, img, quantity }));
-    console.log("add to cart");
+    console.log("add to cart", id, name);
   };
 
   return (
