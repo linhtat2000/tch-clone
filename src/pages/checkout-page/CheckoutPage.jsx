@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Container } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
@@ -12,6 +12,10 @@ import "./checkoutPage.scss";
 
 const CheckoutPage = () => {
   const cart = useSelector((state) => state.cart);
+  const cartTotal = cart.products.reduce((accumulator, item) => {
+    return accumulator + item.quantity * item.price;
+  }, 0);
+  const [total, setTotal] = useState(cartTotal);
   const dispatch = useDispatch();
 
   const itemQuantity = cart.products.map((item) => {
@@ -25,10 +29,9 @@ const CheckoutPage = () => {
 
   const handleDeleteProduct = (index, product) => {
     dispatch(deleteProduct(index));
-    cart.total -= product.price * product.quantity;
+    let calculateTotal = total - product.price * product.quantity;
+    setTotal(calculateTotal);
   };
-
-  console.log(cart.total);
 
   const handleDeleteOrder = () => {
     dispatch(deleteOrder());
@@ -125,7 +128,7 @@ const CheckoutPage = () => {
           <div className="total">
             <div className="total-left">
               <p>Thành tiền</p>
-              <p className="total-price">{cart.total}.000đ</p>
+              <p className="total-price">{total}.000đ</p>
             </div>
             <div className="total-center">
               <p>Số lượng</p>
