@@ -1,17 +1,13 @@
 .menu-page {
-  width: 1100px;
-  display: flex;
-  justify-content: space-between;
-  margin: 12em auto;
+  margin: 12em 0;
 
   .left {
-    flex: 1;
+    padding-left: 6em;
   }
 
   .right {
-    flex: 5;
     border-left: 2px solid #ccc;
-    padding-left: 8em;
+    padding: 0 6em;
 
     .banner {
       width: 100%;

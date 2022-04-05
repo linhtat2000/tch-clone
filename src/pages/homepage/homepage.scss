@@ -26,9 +26,10 @@
     text-transform: none;
   }
 
-  .collections {
-    width: 1200px;
-    padding-bottom: 16em;
+  .container {
+    .collections {
+      margin: 2em 16em 16em;
+    }
   }
 
   .new-products {
@@ -44,7 +45,7 @@
       margin-top: 6em;
 
       .product-img {
-        width: 700px;
+        width: 80%;
       }
 
       .left {
@@ -121,6 +122,28 @@
       .topic-list {
         display: flex;
         flex-wrap: wrap;
+      }
+    }
+  }
+
+  @include lg {
+  }
+
+  @include md {
+    .container {
+      .collections {
+        margin: 2em 6em 16em;
+      }
+    }
+  }
+
+  @include xs {
+    .container {
+      justify-content: center;
+
+      .collections {
+        margin-top: 0;
+        margin-bottom: 8em;
       }
     }
   }

@@ -3,6 +3,35 @@ $secondary-clr: #fff7e6;
 
 $topbar-info-height: 0px;
 
+$xs-width: 0px;
+$sm-width: 600px;
+$md-width: 900px;
+$lg-width: 1280px;
+
+@mixin xs {
+  @media (min-width: #{$xs-width}) and (max-width: #{$sm-width}) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (min-width: #{$sm-width}) and (max-width: #{$md-width}) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: #{$md-width}) and (max-width: #{$lg-width}) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: #{$lg-width}) and (max-width: 1536px) {
+    @content;
+  }
+}
+
 p {
   font-size: 1.6rem;
 }

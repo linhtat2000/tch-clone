@@ -1,4 +1,5 @@
 import { useLocation } from "react-router-dom";
+import { Grid } from "@mui/material";
 import ProductList from "../../components/product-list/ProductList";
 import Sidebar from "../../components/sidebar/Sidebar";
 import banner from "../../assets/img/menu-banner.jpg";
@@ -46,20 +47,16 @@ const MenuPage = () => {
   }
 
   return (
-    <>
-      <div className="menu-page">
-        <div className="left">
-          <Sidebar />
-        </div>
-        <div className="right">
-          <img src={banner} alt="Promo product banner" className="banner" />
-          <h2 className="category">{heading}</h2>
-          <div className="collections">
-            <ProductList data={data} />
-          </div>
-        </div>
-      </div>
-    </>
+    <Grid container className="menu-page">
+      <Grid item className="left" lg={2}>
+        <Sidebar />
+      </Grid>
+      <Grid item className="right" lg={10}>
+        <img src={banner} alt="Promo product banner" className="banner" />
+        <h2 className="category">{heading}</h2>
+        <ProductList data={data} />
+      </Grid>
+    </Grid>
   );
 };
 

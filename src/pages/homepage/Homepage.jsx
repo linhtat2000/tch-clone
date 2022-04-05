@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Button, Container, ThemeProvider } from "@mui/material";
+import { Button, Container, Grid, ThemeProvider } from "@mui/material";
 import BlogItem from "../../components/blog-item/BlogItem";
 import ProductList from "../../components/product-list/ProductList";
 import { all } from "../../products-data";
@@ -19,11 +19,11 @@ const Homepage = () => {
     <ThemeProvider theme={theme}>
       <div className="homepage">
         <img src={banner} alt="Tet Holiday banner" className="banner" />
-        <Container maxWidth="lg">
+        <Grid container className="container">
           <div className="collections">
             <ProductList data={all} />
           </div>
-        </Container>
+        </Grid>
         <div className="new-products">
           <Container maxWidth="lg">
             <div className="item">
@@ -106,7 +106,6 @@ const Homepage = () => {
             </div>
           </Container>
         </div>
-        {/* </Container> */}
       </div>
     </ThemeProvider>
   );

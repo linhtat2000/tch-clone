@@ -5,6 +5,9 @@
   color: #777;
   position: sticky;
   top: 7.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   .category {
     text-decoration: none;
