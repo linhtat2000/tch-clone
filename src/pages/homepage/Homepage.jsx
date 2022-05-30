@@ -7,8 +7,11 @@ import { all } from "../../products-data";
 
 import hcmStore1 from "../../assets/img/hcm-store-1.jpg";
 import hcmStore2 from "../../assets/img/hcm-store-2.jpg";
-import tradao from "../../assets/img/tra-dao.png";
-import tranhan from "../../assets/img/tra-nhan.png";
+import headline from "../../assets/img/promo-headline.svg";
+import promo1 from "../../assets/img/dau-tay-man-muoi.png";
+import promo2 from "../../assets/img/xoai-aloe-vera.png";
+import promo3 from "../../assets/img/da-tuyet-yuzu.png";
+import promo4 from "../../assets/img/da-tuyet-man-muoi.png";
 import banner from "../../assets/img/banner.png";
 import theme from "../../theme";
 
@@ -24,44 +27,105 @@ const Homepage = () => {
             <ProductList data={all} />
           </div>
         </Grid>
-        <div className="new-products">
-          <Container maxWidth="lg">
-            <div className="item">
-              <div className="left">
-                <h2 className="header">Trà Sen Nhãn Sum Vầy</h2>
-                <p className="description">
-                  Thức uống mang hương vị của nhãn, của sen, của trà Oolong đầy
-                  thanh mát cho tất cả các thành viên trong dịp Tết này. An
-                  lành, thư thái và đậm đà chính là những gì The Coffee House
-                  mong muốn gửi trao đến bạn và gia đình.
+        <Grid container className="new-products">
+          <Grid item lg={12} md={6} sm={12} xs={12} className="wrapper">
+            <img src={headline} alt="hibicus-tea" className="headline" />
+            <p className="promo-desc">
+              Được chiết xuất từ 100% hoa Hibiscus tự nhiên, không chứa caffeine
+              cùng topping trái cây đa dạng, Hi-Tea Healthy là lựa chọn cho
+              những ai muốn chăm sức khoẻ và yêu chiều bản thân. Nay có thêm 4
+              vị mới cực hấp dẫn kèm topping Aloe Vera ngon ngất ngây, đẹp đắm
+              say.
+            </p>
+            <p className="promo-cta">Thử đi chờ chi!</p>
+            <div className="product-wrapper">
+              <img
+                src={promo1}
+                alt="Hi-Tea Dâu Tây Mận Muối Aloe Vera"
+                className="product-img"
+              />
+              <div className="product-info">
+                <h3 className="product-title">
+                  Hi-Tea Dâu Tây Mận Muối Aloe Vera
+                </h3>
+                <p className="product-desc">
+                  Sự kết hợp độc đáo giữa 3 sắc thái hương vị khác nhau: trà hoa
+                  Hibiscus chua thanh, Mận muối mặn mặn và Dâu tây tươi Đà Lạt
+                  cô đặc ngọt dịu. Ngoài ra, topping Aloe Vera tươi mát, ngon
+                  ngất ngây, đẹp đắm say, hứa hẹn sẽ khuấy đảo hè này.
                 </p>
                 <Button variant="contained" className="btn">
-                  Tìm hiểu thêm
+                  Thử ngay
                 </Button>
               </div>
-              <div className="right">
-                <img src={tranhan} alt="Longan tea" className="product-img" />
+            </div>
+            <div className="product-container">
+              <div className="product-wrapper-vertical">
+                <img
+                  src={promo2}
+                  alt="Hi-Tea Xoài Aloe Vera"
+                  className="product-img"
+                />
+                <div className="product-info">
+                  <h3 className="product-title">Hi-Tea Xoài Aloe Vera</h3>
+                  <p className="product-desc">
+                    Vị ngọt thanh, thơm phức từ xoài chín mọng kết hợp cùng vị
+                    chua đặc trưng của trà hoa Hibiscus tự nhiên, sẽ khiến bạn
+                    khó lòng quên được thức uống “chân ái” này. Đặc biệt,
+                    topping Aloe Vera tự nhiên không chỉ nhâm nhi vui miệng mà
+                    còn giúp bạn “nâng tầm nhan sắc”.
+                  </p>
+                  <Button variant="contained" className="btn">
+                    Thử ngay
+                  </Button>
+                </div>
+              </div>
+              <div className="product-wrapper-vertical">
+                <img
+                  src={promo3}
+                  alt="Hi-Tea Đá Tuyết Yuzu Aloe Vera"
+                  className="product-img"
+                />
+                <div className="product-info">
+                  <h3 className="product-title">
+                    Hi-Tea Đá Tuyết Yuzu Aloe Vera
+                  </h3>
+                  <p className="product-desc">
+                    Vị chua tươi mát của trà hoa Hibiscus, cùng đá tuyết Yuzu
+                    (quýt Nhật) chua dịu sẽ trở nên hài hòa hơn nhờ topping Aloe
+                    Vera giòn ngọt, sẽ khiến bạn thích thú ngay lần chạm môi đầu
+                    tiên.
+                  </p>
+                  <Button variant="contained" className="btn">
+                    Thử ngay
+                  </Button>
+                </div>
+              </div>
+              <div className="product-wrapper-vertical">
+                <img
+                  src={promo4}
+                  alt="Hi-Tea Đá Tuyết Mận Muối Aloe Vera"
+                  className="product-img"
+                />
+                <div className="product-info">
+                  <h3 className="product-title">
+                    Hi-Tea Đá Tuyết Mận Muối Aloe Vera
+                  </h3>
+                  <p className="product-desc">
+                    “Have a mặn mà” và chua chua từ Mận muối xay cùng đá tuyết,
+                    hoà quyện với vị trà hoa Hibiscus chua dịu và chút ngọt
+                    thanh tao bởi topping Aloe Vera, Hi-Tea Đá Tuyết Mận Muối
+                    Aloe Vera là thức uống “must try” để đánh tan cơn khát mùa
+                    hè.
+                  </p>
+                  <Button variant="contained" className="btn">
+                    Thử ngay
+                  </Button>
+                </div>
               </div>
             </div>
-            <div className="item">
-              <div className="right close-to-left">
-                <h2 className="header">Trà Dưa Đào Sung Túc</h2>
-                <p className="description">
-                  Vị thơm ngọt của Dưa lưới và đào tươi chua chua, ngọt ngọt
-                  trên nền trà Oolong trứ danh cùng lớp foam cheese mỏng nhẹ vị
-                  mặn mặn tạo nên sự cân bằng cho thức uống, sẽ đem đến cho bạn,
-                  gia đình và bạn bè những giai điệu tươi vui cho mùa xuân mới.
-                </p>
-                <Button variant="contained" className="btn">
-                  Tìm hiểu thêm
-                </Button>
-              </div>
-              <div className="left">
-                <img src={tradao} alt="Peach tea" className="product-img" />
-              </div>
-            </div>
-          </Container>
-        </div>
+          </Grid>
+        </Grid>
         <div className="store">
           <Container maxWidth="lg" className="left">
             <h2 className="header">The Coffee House 64A Lữ Gia - Quận 11</h2>
