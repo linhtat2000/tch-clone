@@ -127,7 +127,7 @@ const Homepage = () => {
           </Grid>
         </Grid>
         <div className="store">
-          <Container maxWidth="lg" className="left">
+          <div className="left">
             <h2 className="header">The Coffee House 64A Lữ Gia - Quận 11</h2>
             <p className="description">
               Cửa hàng mới vừa ra mắt ngày 17/12 tại Quận 11, Hồ Chí Minh đã sẵn
@@ -136,7 +136,7 @@ const Homepage = () => {
             <Button variant="contained" className="btn">
               Tìm hiểu thêm
             </Button>
-          </Container>
+          </div>
           <div className="right">
             <img src={hcmStore1} alt="store" className="store-img" />
           </div>
