@@ -1,19 +1,25 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 import logo from "../../assets/img/logo.png";
 
 import "./navbar.scss";
 import Cart from "../cart/Cart";
 
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
+
   return (
     <nav className="navbar">
+      <MenuIcon className="menu-icon" onClick={() => setOpen(!open)} />
       <div className="left">
         <Link to="/" className="link">
           <img src={logo} alt="logo " className="logo" />
         </Link>
       </div>
-      <div className="center">
+      <div className={open ? "center open" : "center"}>
+        <CloseIcon className="close-btn" onClick={() => setOpen(!open)} />
         <div className="links">
           <Link to="/menu/all" className="link">
             Menu
@@ -29,7 +35,6 @@ const Navbar = () => {
           </Link>
         </div>
       </div>
-
       <div className="right">
         <Link to="/checkout">
           <Cart />
