@@ -42,9 +42,9 @@
   .checkout-container {
     display: flex;
     justify-content: space-evenly;
+    padding: 0 4em;
 
     .left {
-      flex: 1;
       max-width: 450px;
 
       .customer-info {
@@ -108,12 +108,12 @@
         em {
           color: $primary-clr;
           font-style: normal;
+          cursor: pointer;
         }
       }
     }
 
     .right {
-      flex: 1;
       max-width: 480px;
       margin-left: 4em;
       display: flex;
@@ -187,14 +187,12 @@
             justify-content: space-between;
             padding-bottom: 1.5em;
             margin-bottom: 1.5em;
-          }
-
-          .shipping {
             border-bottom: 1px solid #ddd;
           }
 
-          .promote {
+          .discount {
             color: $primary-clr;
+            border: none;
           }
         }
       }

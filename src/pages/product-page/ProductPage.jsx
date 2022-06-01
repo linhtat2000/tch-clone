@@ -124,7 +124,9 @@ const ProductPage = () => {
           </div>
           <div className="right">
             <h1 className="heading">{product.name}</h1>
-            <p className="price">{product.price}.000đ</p>
+            <p className="price">
+              {product.salePrice ? product.salePrice : product.price}.000đ
+            </p>
             <div className="quantity-container">
               <h3>Số lượng:</h3>
               <div className="quantity-wrapper">

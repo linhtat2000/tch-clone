@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Button, Container, Grid, ThemeProvider } from "@mui/material";
 import BlogItem from "../../components/blog-item/BlogItem";
 import ProductList from "../../components/product-list/ProductList";

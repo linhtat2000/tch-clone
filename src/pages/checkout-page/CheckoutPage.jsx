@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Container } from "@mui/material";
+import { Container, Grid } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
@@ -13,9 +13,16 @@ import "./checkoutPage.scss";
 const CheckoutPage = () => {
   const cart = useSelector((state) => state.cart);
   const cartTotal = cart.products.reduce((accumulator, item) => {
+    return (
+      accumulator +
+      item.quantity * (item.salePrice ? item.salePrice : item.price)
+    );
+  }, 0);
+  const cartSubTotal = cart.products.reduce((accumulator, item) => {
     return accumulator + item.quantity * item.price;
   }, 0);
   const [total, setTotal] = useState(cartTotal);
+  const [subTotal, setSubTotal] = useState(cartSubTotal);
   const dispatch = useDispatch();
 
   const itemQuantity = cart.products.map((item) => {
@@ -29,7 +36,12 @@ const CheckoutPage = () => {
 
   const handleDeleteProduct = (index, product) => {
     dispatch(deleteProduct(index));
-    let calculateTotal = total - product.price * product.quantity;
+    let calculateSubTotal = subTotal - product.price * product.quantity;
+    let calculateTotal =
+      cartTotal -
+      (product.salePrice ? product.salePrice : product.price) *
+        product.quantity;
+    setSubTotal(calculateSubTotal);
     setTotal(calculateTotal);
   };
 
@@ -44,8 +56,8 @@ const CheckoutPage = () => {
         <h1>Xác nhận đơn hàng</h1>
       </div>
 
-      <Container maxWidth="lg" className="checkout-container">
-        <div className="left">
+      <Grid container className="checkout-container">
+        <Grid item lg={6} md={6} sm={12} xs={12} className="left">
           <div className="customer-info">
             <h2 className="heading">Giao hàng</h2>
             <form className="info">
@@ -81,8 +93,8 @@ const CheckoutPage = () => {
               Coffee House
             </p>
           </div>
-        </div>
-        <div className="right">
+        </Grid>
+        <Grid item lg={6} md={6} sm={12} xs={12} className="right">
           <div className="receipt-container">
             <div className="orders">
               <h2 className="heading">Các món đã chọn</h2>
@@ -109,19 +121,25 @@ const CheckoutPage = () => {
                       Xóa
                     </p>
                   </div>
-                  <p className="item-price">{product.price}.000đ</p>
+                  <p className="item-price">
+                    {product.salePrice ? product.salePrice : product.price}.000đ
+                  </p>
                 </div>
               ))}
             </div>
             <div className="subtotal">
               <h2 className="heading">Tổng cộng</h2>
-              <div className="price shipping">
-                <p>Phí vận chuyển</p>
-                <p>10.000đ</p>
+              <div className="price">
+                <p>Thành tiền</p>
+                <p>{subTotal}.000đ</p>
               </div>
-              <div className="price promote">
-                <p>Khuyến mãi</p>
+              <div className="price">
+                <p>Phí vận chuyển</p>
                 <p>15.000đ</p>
+              </div>
+              <div className="price discount">
+                <p>Khuyến mãi</p>
+                <p>{subTotal - total}.000đ</p>
               </div>
             </div>
           </div>
@@ -142,8 +160,8 @@ const CheckoutPage = () => {
             <DeleteIcon className="delete-icon" />
             <p>Xóa đơn hàng</p>
           </div>
-        </div>
-      </Container>
+        </Grid>
+      </Grid>
     </div>
   );
 };
